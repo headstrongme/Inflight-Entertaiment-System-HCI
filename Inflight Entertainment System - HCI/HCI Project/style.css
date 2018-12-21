@@ -1,0 +1,201 @@
+.nav-card {
+    height: 250px;
+    background-color: #F6DDAD;
+}
+
+.learn-about-spain .nav-card {
+    height: 500px;
+}
+
+.clock {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    
+    font-size: 20pt;
+    font-weight: bold;
+    
+    color: white;
+}
+
+.time-left {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    
+    text-align: right;
+
+    font-size: 20pt;
+    font-weight: bold;
+    
+    color: white;
+}
+
+.bottom-buttons {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+}
+
+.bottom-buttons .btn.btn-light {
+    background-color: #F6DDAD;
+    font-size: 16pt;
+    font-weight: bold;
+    border: none;
+    padding: 5px 20px;
+}
+
+.languages h1 {
+    color: white;
+}
+
+.body{
+	background-image: url("images/red3.jpg");
+}
+
+.background{
+	background-image: url("images/orange.jpg");
+}
+
+a.card {
+    color: black !important;
+    text-decoration: none;
+}
+
+a.card img {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.people{
+	background-image: url("images/people3.jpg");
+	background-size: cover;
+}
+
+.spanish{
+	background-image: url("images/spanish1.jpg");
+	background-size: cover;
+}
+
+.places{
+	background-image: url("images/places1.jpg");
+	background-size: cover;
+}
+
+/* People of Spain */
+
+.video-list {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow-y: scroll;
+}
+
+.video-list .row {
+    height: 250px;
+    margin-bottom: 20px;
+    padding: 0 5px;
+}
+
+.video-list .row .card {
+    border: none;
+}
+
+.video-list .nav-card {
+    background-color: white;
+}
+
+.video-list .row .thumbnail {
+    height: 240px;
+    width: 426px;
+    background-color: gray;
+}
+
+.video-list .row .thumbnail img {
+    height: 240px;
+    width: 426px;
+    object-fit: cover;
+}
+
+.video-list .row .video-info {
+    padding: 15px;
+    text-align: left;
+}
+
+/* Learn Spanish */
+
+.card.flash-card {
+    height: 400px;
+    width: 600px;
+}
+
+.flash-card h1 {
+    font-size: 45pt;
+}
+
+.flash-card h2 {
+    font-weight: normal;
+}
+
+.flash-card .listen-controls {
+    color: #626262;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.flash-card .listen-controls img {
+    height: 50px;
+    margin: 0;
+}
+
+.flash-card .tap-to-reveal {
+    color: #626262;
+    font-size: 20pt;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.left-card {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: -500px;
+    
+    opacity: 0.5;    
+}
+
+.left-card div, .right-card div {
+
+    font-size: 36pt;
+    padding: 0 35px;
+
+}
+
+.right-card {
+    position: fixed;
+    top: calc(50% - 200px);
+    right: -500px;
+
+    opacity: 0.5;    
+}
+
+/* Places to visit */
+
+#map {
+    height: 600px;
+}
+
+#place-instructions {
+    font-size: 24pt;
+    padding: 0 50px;
+}
+
+#place-image {
+    height: 400px;
+    width: auto;
+    object-fit: cover;
+}

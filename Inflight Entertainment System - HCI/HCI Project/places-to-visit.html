@@ -1,0 +1,116 @@
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    
+    <div class="container d-flex text-center h-100">
+        <div class="row align-self-center w-100">
+            <div class="container w-100" >
+                <div class="row my-2" >
+                    <div id="map" class="col"></div>
+                    <div id="place-info" class="col card mx-2 d-flex flex-column justify-content-center">
+                        <p id="place-instructions">Tap on one of the red markers to learn about that place.</p>
+                        <img id="place-image" src="" class="d-none" />
+                        <h1 id="place-name"></h1>
+                        <p id="place-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clock">9:00 AM</div>
+    <div class="time-left">3 hours left in flight</div>
+    
+    <div class="bottom-buttons d-flex w-100 justify-content-between">
+        <div class="left">
+            <a class="btn btn-light" href="language.html">English</a>
+        </div>
+        <div class="middle">
+            <a class="btn btn-light" href="learn-about-spain.html">&lt; Back</a>
+            <a class="btn btn-light" href="home.html">Home</a>
+        </div>
+        <div class="right">
+            <button class="btn btn-light">Set Volume</button>
+        </div>
+    </div>
+    
+    <script>
+    // Initialize and add the map
+    function initMap() {
+      
+        var spain = {lat: 39.8601488, lng: -3.6973365};
+        
+        var map = new google.maps.Map(
+            document.getElementById('map'), {
+              zoom: 5.5, 
+              center: spain,
+              styles: [{
+                "featureType": "administrative.locality",
+                "elementType": "labels",
+                "stylers": [{
+                  "visibility": "off"
+              }]
+            }]
+          
+            }
+        );
+          
+        var places = [
+            {
+                name: "Barcelona",
+                lat: 41.397,
+                lng: 2.174,
+                description: "Barcelona is a city in Spain. It is the capital and largest city of Catalonia. One of the most important buildings here is Parliament de Catalunya in Parc de la Ciutadella. The best way to get around is by using the metro.<br>Image from Wikipedia.",
+                photoUrl: "https://upload.wikimedia.org/wikipedia/commons/3/39/Central_business_district_of_Barcelona_%282%29.JPG"
+            },
+            {
+                name: "Madrid",
+                lat: 40.417,
+                lng: -3.703,
+                description: "Madrid is the capital city of Spain. It is also the third largest city in the European Union. You can enjoy historic landmarks here like the Royal Palace and the National Library.<br>Photo from Wikipedia",
+                photoUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plaza_Mayor_de_Madrid_06.jpg/2560px-Plaza_Mayor_de_Madrid_06.jpg"
+            },
+            {
+                name: "Seville",
+                lat: 37.389,
+                lng: -5.983,
+                description: "Seville is the fourth largest city in Spain. Tourists may enjoy the large number of museums and historic architecture throughout the city.<br>Photo from Wikipedia",
+                photoUrl: "https://upload.wikimedia.org/wikipedia/commons/d/df/Plaza_Virgen_de_los_Reyes%2C_Seville%2C_Spain_-_Sep_2009.jpg"
+            }
+        ];
+        
+        places.forEach((place) => {
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: place.lat,
+                    lng: place.lng
+                },
+                map: map
+            });
+            
+            marker.addListener("click", () => {
+                console.log(place.name);
+                
+                document.getElementById("place-instructions").className = "d-none";
+                document.getElementById("place-image").className = "";
+                
+                document.getElementById("place-name").textContent = place.name;
+                document.getElementById("place-description").innerHTML = place.description;
+                document.getElementById("place-image").setAttribute("src", place.photoUrl);
+                
+            });
+        })
+    }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRNr6_Y5lXmkoQhx-XLdetOE53qDvENAs&callback=initMap">
+    </script>
+
+    
+</body>
+
+</html>
